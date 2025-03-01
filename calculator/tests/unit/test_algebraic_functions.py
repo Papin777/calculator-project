@@ -2,6 +2,7 @@ import os
 import sys
 import pytest
 
+
 # Ajoute le dossier racine au Python Path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../../..")))
 
@@ -24,3 +25,7 @@ class TestCalculator:
     def test_division_by_zero(self):
         with pytest.raises(ValueError):
             divide(4, 0)
+
+    def test_exponent():
+        assert exponent(2, 3) == 8  # 2^3 = 8
+
